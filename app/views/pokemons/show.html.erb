@@ -1,0 +1,26 @@
+<div class="pokemon-name">
+  <div class="container">
+    <p style="display: inline; padding-left: 40px;">
+      NO.<%= @pokemon.number %>
+      <%= @pokemon.name%>
+    </p>
+        
+    <p class="p-type">
+      <%= @pokemon.zokusei %>
+    </p>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column is-4">
+    <div class="pokemon-img">
+      <%= image_tag @pokemon.image %>
+    </div>
+  </div>
+    
+  <div class="column is-8">
+    <div class="p-description">
+      <%= @pokemon.description %>
+    </div>
+  </div>
+</div>
