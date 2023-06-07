@@ -1,0 +1,64 @@
+<div class="container mt-6">
+  <div class="columns">
+    <div class="column is-three-fifths is-offset-one-fifth">
+      <%= form_with model: @pokemon, url: { action: :create }, local: true do |f| %>
+        <!-- 	エラーメッセージ	 -->
+        <% if @pokemon.errors %>
+          <% @pokemon.errors.full_messages.each do |message| %>
+		    <div class='alert'>
+		      <ul>
+          　　   <li><%= message %></li>
+			  </ul>
+			</div>
+          <% end %>
+      　<% end %>
+		<!-- 	ここまでエラーメッセージ	 -->
+        <div class="field">
+          <%= f.label :name, "なまえ", class: 'label'%>
+          <div class="control">
+            <%= f.text_field :name, class:'input'%>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :number, "ばんごう", class: 'label' %>
+          <div class="control">
+            <%= f.text_field :number, class: 'input'%>
+          </div>
+        </div>
+        <div class='field'>
+          <%= f.label :zokusei, "タイプ", class: 'label' %>
+          <div class="control">
+            <%= f.text_field :zokusei, class: 'input'%>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :description, "せつめい", class: 'label' %>
+          <div class="control">
+            <%= f.text_area :description, class: 'textarea' %> 
+          </div>       
+        </div>
+        
+        <div class="file">
+          <label class="file-label"></label>
+        </div>
+        <br/>
+        <br/>
+        <div class="file is-boxed">
+            <label class="file-label">
+            <%= f.file_field :image, class: 'file-input'%>
+              <span class="file-cta">
+                  <span class="file-icon">
+                      <i class="fas fa-upload"></i>
+                  </span>
+                  <span class="file-label">
+                    <%= f.label :image, 'がぞう', class: 'label'%>
+                  </span>
+             </span>
+          </label>
+        </div>
+        
+        <%= f.submit "登録", class: 'button is-link'%>
+      <% end %>
+    </div>
+  </div>
+</div>
