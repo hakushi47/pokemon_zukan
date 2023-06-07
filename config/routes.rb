@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'index'      => 'pokemons#index'
-  get 'detail/:id' => 'pokemons#show'
-  get 'new'        => 'pokemons#new'
-  post 'new'       => 'pokemons#create'
+  get 'pokemons/index'      => 'pokemons#index'
+  get 'pokemons/detail/:id' => 'pokemons#show', as: 'pokemon'
+  get 'pokemons/new'        => 'pokemons#new'
+  post 'pokemons'       => 'pokemons#create'
 end
