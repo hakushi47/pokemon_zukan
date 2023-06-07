@@ -1,1 +1,16 @@
-<h1 class="title has-text-centered">ポケモンいちらん</h1>
+<div class="container mt-6">
+  <h1 class="title has-text-centered"> ポケモンいちらん </h1>
+  <div class="columns is-multiline">
+    <% @pokemons.each do |p| %>
+      <div class="column is-one-quarter">
+        <div class="pokemon-card">
+          <%= image_tag p.image.variant(resize_to_limit: [100, 100])%>
+          <div class="p-name">
+            <p> NO. <%= p.number %> </p>
+            <p class="vertical-middle"><%= link_to p.name, pokemon_path(p) %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 class PokemonsController < ApplicationController
     def index
+      @pokemons = Pokemon.all
     end
 
     def show
@@ -15,11 +16,16 @@ class PokemonsController < ApplicationController
       @pokemon = Pokemon.new
       @pokemon.name = params[:pokemon][:name]
       @pokemon.zokusei = params[:pokemon][:zokusei]
-      @pokemon.number = params[:pokemon][:number] 
+      @pokemon.number = params[:pokemon][:number]
       @pokemon.description  = params[:pokemon][:description]
       @pokemon.image = params[:pokemon][:image]
       @pokemon.save
-      redirect_to @pokemon
+      if @pokemon.save
+        redirect_to controller: :pokemons, action: :index
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
+      
 
 end
