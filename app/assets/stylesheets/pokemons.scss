@@ -1,0 +1,57 @@
+// =====  Pokemon/show ===== //
+.pokemon-name {
+    background-color: #344e67;
+    color: #f2f5ec;
+    font-size: 25px;
+    line-height: 65px;
+  }
+  
+  .p-type {
+    display:inline;
+    font-size: 20px;
+    margin: 3em;  
+  }
+  
+  .p-description {
+    background-color: #fff;
+    color: #283b4f;
+    font-size: 20px;
+    line-height: 1.5;  
+    padding: 50px;
+  }
+  
+  .pokemon-card {
+    background-color: #fff;
+    display: table;
+    padding: 20px;
+  }
+  
+  .p-name {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .vertical-middle {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .p-edit {
+    margin-top: 110px;
+    
+    a {
+      font-size: 16px;
+      display:inline;
+      margin-top: 60px;
+    }
+  }
+  
+  .alert {
+    background-color: #ffebe8;
+    border: 2px solid #990000;
+    color: #262626;
+    font-weight: 850;
+    text-align: center;
+    padding: 12px;
+  }
+  
